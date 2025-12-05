@@ -1,3 +1,5 @@
+<img width="1198" height="889" alt="ragio" src="https://github.com/user-attachments/assets/feb860f4-eb97-48c9-9edb-986672ade375" />
+
 # RAG.io - Retrieval-Augmented Generation
 
 **Enterprise-grade RAG platform with multi-provider LLM support, document intelligence, and real-time streaming**
