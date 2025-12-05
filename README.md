@@ -10,7 +10,6 @@
 ![React](https://img.shields.io/badge/React-4EAA25?style=for-the-badge&logo=React&logoColor=black)
 ![Docker](https://img.shields.io/badge/Docker-0078D6?style=for-the-badge&logo=Docker&logoColor=black)
 
----
 
 ## 📋 Table of Contents
 
@@ -55,19 +54,19 @@ RAG Multi-Expert is a production-ready Retrieval-Augmented Generation platform t
 ## 🖼️ Demo
 
 ### 1. RAG Chat Interface
-![RAG Chat](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=RAG+Chat+Interface)
+<img width="1719" height="911" alt="Capture d&#39;écran 2025-12-05 235210" src="https://github.com/user-attachments/assets/01661270-926b-4409-8c18-757d0210c835" />
 *Real-time streaming with source attribution and intelligent context management*
 
 ### 2. Document Upload & Processing
-![Document Upload](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Document+Upload)
-*Drag-and-drop upload with automatic chunking and vectorization*
+<img width="1702" height="905" alt="Capture d&#39;écran 2025-12-05 235411" src="https://github.com/user-attachments/assets/20666ce0-59f0-4a94-aab9-1b9b0448c7d1" />
+*Repo/Manual upload with automatic chunking and vectorization*
 
 ### 3. Project Dashboard
-![Projects](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Projects+Dashboard)
+<img width="1719" height="908" alt="Capture d&#39;écran 2025-12-05 235129" src="https://github.com/user-attachments/assets/e391f4c8-da1c-4d7b-9dbd-2d79db4bb01e" />
 *Multi-project organization with statistics and document management*
 
 ### 4. Provider Configuration
-![Providers](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Provider+Config)
+<img width="1716" height="908" alt="Capture d&#39;écran 2025-12-05 235528" src="https://github.com/user-attachments/assets/34b36ea4-3b67-44cb-984e-73ea799237c1" />
 *Graphical configuration for 13+ LLM providers*
 
 ---
