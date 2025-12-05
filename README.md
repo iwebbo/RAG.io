@@ -230,15 +230,32 @@ const reader = response.body.getReader();
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/yourusername/rag-multi-expert.git
-cd rag-multi-expert
+git clone https://github.com/iwebbo/rag.io.git
+cd rag.io
 
-# 2. Configure environment
-cp .env.example .env
-# Edit .env with your API keys (optional, Ollama works without keys)
+# 2. Copy config files
+cp backend/.env.example backend/.env
+cp frontend/.env.example frontend/.env
 
-# 3. Start all services
+# 3. Generate secrets
+python3 -c "import secrets; print(secrets.token_hex(32))"  # SECRET_KEY
+python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().decode())"  # ENCRYPTION_KEY
+
+# 4. Edit backend/.env with your secrets
+
+# 4.1 Edit backend/.env if (need to be run from VM/PROD Server)
+CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost,http://localhost:80
+# Change by your hostname.fqdn or IP
+
+# 4.1 Edit frontend/.env if (need to be run from VM/PROD Server)
+VITE_API_URL=http://localhost:8000 
+# Change by your hostname.fqdn or IP
+
+# 5. Start application
 docker-compose up -d
+
+# 6. Check status
+docker-compose ps
 
 # 4. Access application
 # Frontend: http://localhost:3000
