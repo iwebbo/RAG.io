@@ -1024,79 +1024,9 @@ rag-multi-expert/
 └── README.md
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these guidelines:
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `pytest` (backend), `npm test` (frontend)
-5. Commit: `git commit -m 'Add amazing feature'`
-6. Push: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-### Code Style
-
-- **Python**: Follow PEP 8, use Black formatter
-- **JavaScript**: Use ESLint + Prettier
-- **Commits**: Conventional Commits format
-
-### Areas for Contribution
-
-- 🆕 **New LLM Providers**: Add support for more providers
-- 🧪 **Testing**: Increase test coverage
-- 📚 **Documentation**: Improve guides and examples
-- 🐛 **Bug Fixes**: Check GitHub Issues
-- 🎨 **UI/UX**: Enhance frontend experience
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) file for details.
-
----
-
-## 💬 Support
-
-- **GitHub Issues**: [https://github.com/yourusername/rag-multi-expert/issues](https://github.com/yourusername/rag-multi-expert/issues)
-
----
-
-## 🗓️ Roadmap
-
-### Q1 2025
-- [ ] Multi-modal RAG (images, audio)
-- [ ] Advanced reranking (Cohere, cross-encoder)
-- [ ] Hybrid search (keyword + semantic)
-- [ ] Graph RAG (Neo4j integration)
-
-### Q2 2025
-- [ ] Multi-tenant support
-- [ ] Fine-tuning interface
-- [ ] Custom embedding models
-- [ ] Advanced analytics dashboard
-
-### Q3 2025
-- [ ] Mobile app (React Native)
-- [ ] Voice interface
-- [ ] Collaborative features
-- [ ] Enterprise SSO
-
----
-
-## 🙏 Acknowledgments
-
-- **ChromaDB** - Vector database
-- **LangChain** - RAG framework inspiration
-- **Hugging Face** - Embedding models
-- **FastAPI** - Modern Python web framework
-- **React** - UI framework
-
----
 
 **Built with ❤️ for Community**
 
