@@ -1,4 +1,4 @@
-<img width="1198" height="889" alt="logo" src="https://github.com/user-attachments/assets/5d61c808-1c8e-4e35-9718-2ff0663c5360" />
+<img width="800" height="600" alt="logo" src="https://github.com/user-attachments/assets/5d61c808-1c8e-4e35-9718-2ff0663c5360" />
 
 # RAG.io - Retrieval-Augmented Generation
 
