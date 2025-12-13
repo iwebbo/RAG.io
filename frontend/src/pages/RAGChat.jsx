@@ -32,10 +32,10 @@ const RAGChat = () => {
     provider_name: 'ollama',
     model: 'llama2',
     temperature: 0.7,
-    top_k: 5  // ✅ Peut monter jusqu'à 20 maintenant
+    top_k: 5  
   });
 
-  // ✅ Détection modèle 256K
+  // Model detect
   const is256KModel = (model) => {
     const largeModels = ['gpt-4-turbo', 'claude-3', 'gemini-1.5', 'llama3.1'];
     return largeModels.some(m => model.toLowerCase().includes(m));
@@ -57,12 +57,11 @@ const RAGChat = () => {
     }
   }, [chatSettings.provider_name]);
 
-  // ✅ Auto-ajuster top_k si modèle 256K détecté
   useEffect(() => {
     if (is256KModel(chatSettings.model) && chatSettings.top_k < 10) {
       setChatSettings(prev => ({
         ...prev,
-        top_k: 15  // ✅ Augmenter automatiquement
+        top_k: 15 
       }));
     }
   }, [chatSettings.model]);
@@ -146,7 +145,7 @@ const RAGChat = () => {
         top_k: res.data.top_k
       });
       
-      console.log('✅ Conversation chargée:', res.data.title, '| Messages:', res.data.messages?.length);
+      console.log('âœ… Conversation chargÃ©e:', res.data.title, '| Messages:', res.data.messages?.length);
     } catch (error) {
       console.error('Failed to load conversation:', error);
       alert('Erreur lors du chargement de la conversation');
@@ -222,9 +221,11 @@ const RAGChat = () => {
         const chunk = decoder.decode(value);
         const lines = chunk.split('\n');
 
-        for (const line of lines) {
+        for (let i = 0; i < lines.length; i++) {
+          const line = lines[i];
+          
           if (line.startsWith('event: retrieval')) {
-            const dataLine = lines[lines.indexOf(line) + 1];
+            const dataLine = lines[i + 1];
             if (dataLine?.startsWith('data: ')) {
               try {
                 const data = JSON.parse(dataLine.substring(6));
@@ -236,7 +237,7 @@ const RAGChat = () => {
           }
 
           if (line.startsWith('event: message')) {
-            const dataLine = lines[lines.indexOf(line) + 1];
+            const dataLine = lines[i + 1];
             if (dataLine?.startsWith('data: ')) {
               try {
                 const data = JSON.parse(dataLine.substring(6));
@@ -254,7 +255,7 @@ const RAGChat = () => {
           }
 
           if (line.startsWith('event: done')) {
-            const dataLine = lines[lines.indexOf(line) + 1];
+            const dataLine = lines[i + 1];
             if (dataLine?.startsWith('data: ')) {
               try {
                 const data = JSON.parse(dataLine.substring(6));
@@ -391,7 +392,7 @@ const RAGChat = () => {
                       fontSize: 'var(--text-xs)', 
                       color: 'var(--gray-500)'
                     }}>
-                      {conv.provider_name} • {conv.model}
+                      {conv.provider_name} â€¢ {conv.model}
                     </div>
                   </div>
                   <button
@@ -427,7 +428,7 @@ const RAGChat = () => {
                     Ask questions about the documents in <strong>{project?.name}</strong>. 
                     I'll search through your documents and provide accurate answers with sources.
                   </p>
-                  {/* ✅ Badge 256K si détecté */}
+                  {/* Badge 256K  */}
                   {is256KModel(chatSettings.model) && (
                     <div style={{ 
                       display: 'flex', 
@@ -441,7 +442,7 @@ const RAGChat = () => {
                       fontWeight: '600'
                     }}>
                       <Zap size={14} />
-                      256K Context Active
+                      128K Context Active
                     </div>
                   )}
                 </div>
@@ -492,7 +493,7 @@ const RAGChat = () => {
                     </button>
 
                     <div style={{ display: 'flex', gap: 'var(--spacing-2)', alignItems: 'center' }}>
-                      {/* ✅ Badge 256K visible */}
+                      {/* âœ… Badge 256K visible */}
                       {is256KModel(chatSettings.model) && (
                         <span style={{ 
                           display: 'flex', 
@@ -502,7 +503,7 @@ const RAGChat = () => {
                           fontWeight: '600'
                         }}>
                           <Zap size={12} />
-                          256K
+                          128K
                         </span>
                       )}
                       
@@ -511,7 +512,7 @@ const RAGChat = () => {
                           onClick={() => setShowSources(!showSources)}
                           className="btn-settings-sm"
                         >
-                          🔍 {retrievedChunks.length} sources
+                          {retrievedChunks.length} sources
                         </button>
                       )}
                     </div>
@@ -568,7 +569,7 @@ const RAGChat = () => {
                         />
                       </div>
 
-                      {/* ✅ Top-K avec max augmenté pour 256K */}
+                      {/*  Top-K avec max  pour 256K */}
                       <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--spacing-2)' }}>
                         <span style={{ fontWeight: '500' }}>Top-K:</span>
                         <input
@@ -606,7 +607,7 @@ const RAGChat = () => {
                           border: '1px solid var(--gray-200)'
                         }}>
                           <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-600)', marginBottom: 'var(--spacing-1)' }}>
-                            📄 {chunk.metadata?.filename} • Score: {(chunk.score * 100).toFixed(1)}%
+                            {chunk.metadata?.filename}  Score: {(chunk.score * 100).toFixed(1)}%
                           </div>
                           <div style={{ fontSize: 'var(--text-xs)', color: 'var(--gray-700)' }}>
                             {chunk.text.substring(0, 150)}...
@@ -658,7 +659,7 @@ const RAGChat = () => {
                     color: 'var(--gray-500)',
                     textAlign: 'center',
                   }}>
-                    {streaming ? 'RAG is thinking...' : 'Press Enter to send • Shift+Enter for new line'}
+                    {streaming ? 'RAG is thinking...' : 'Press Enter to send - Shift+Enter for new line'}
                   </div>
                 </div>
               </div>
