@@ -1,13 +1,15 @@
-# 🧠 RAG.io
+<img width="600" height="600" alt="logo" src="https://github.com/user-attachments/assets/5d61c808-1c8e-4e35-9718-2ff0663c5360" />
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.104+-green.svg)](https://fastapi.tiangolo.com)
-[![React 18](https://img.shields.io/badge/React-18.2-61DAFB.svg)](https://reactjs.org)
+# RAG.io - Retrieval-Augmented Generation
 
 **Enterprise-grade RAG platform with multi-provider LLM support, document intelligence, and real-time streaming**
 
----
+![License](https://img.shields.io/badge/MIT-00599C?style=for-the-badge&logo=MIT&logoColor=black)
+![Python](https://img.shields.io/badge/Python-4EAA25?style=for-the-badge&logo=Python&logoColor=black)
+![FastAPI](https://img.shields.io/badge/FastAPI-4EAA25?style=for-the-badge&logo=FastAPI&logoColor=black)
+![React](https://img.shields.io/badge/React-4EAA25?style=for-the-badge&logo=React&logoColor=black)
+![Docker](https://img.shields.io/badge/Docker-0078D6?style=for-the-badge&logo=Docker&logoColor=black)
+
 
 ## 📋 Table of Contents
 
@@ -52,19 +54,19 @@ RAG Multi-Expert is a production-ready Retrieval-Augmented Generation platform t
 ## 🖼️ Demo
 
 ### 1. RAG Chat Interface
-![RAG Chat](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=RAG+Chat+Interface)
+<img width="1719" height="911" alt="Capture d&#39;écran 2025-12-05 235210" src="https://github.com/user-attachments/assets/01661270-926b-4409-8c18-757d0210c835" />
 *Real-time streaming with source attribution and intelligent context management*
 
 ### 2. Document Upload & Processing
-![Document Upload](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Document+Upload)
-*Drag-and-drop upload with automatic chunking and vectorization*
+<img width="1702" height="905" alt="Capture d&#39;écran 2025-12-05 235411" src="https://github.com/user-attachments/assets/20666ce0-59f0-4a94-aab9-1b9b0448c7d1" />
+*Repo/Manual upload with automatic chunking and vectorization*
 
 ### 3. Project Dashboard
-![Projects](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Projects+Dashboard)
+<img width="1719" height="908" alt="Capture d&#39;écran 2025-12-05 235129" src="https://github.com/user-attachments/assets/e391f4c8-da1c-4d7b-9dbd-2d79db4bb01e" />
 *Multi-project organization with statistics and document management*
 
 ### 4. Provider Configuration
-![Providers](https://via.placeholder.com/800x450/1a1a2e/ffffff?text=Provider+Config)
+<img width="1716" height="908" alt="Capture d&#39;écran 2025-12-05 235528" src="https://github.com/user-attachments/assets/34b36ea4-3b67-44cb-984e-73ea799237c1" />
 *Graphical configuration for 13+ LLM providers*
 
 ---
@@ -966,135 +968,9 @@ Check **Projects → Statistics** for:
 
 ---
 
-## 🛠️ Development
-
-### Project Structure
-
-```
-rag-multi-expert/
-├── backend/
-│   ├── app/
-│   │   ├── main.py                 # FastAPI app
-│   │   ├── config.py               # Settings
-│   │   ├── database.py             # SQLAlchemy setup
-│   │   ├── dependencies.py         # Auth dependencies
-│   │   ├── models/
-│   │   │   ├── user.py
-│   │   │   ├── project.py          # RAG models
-│   │   │   └── ...
-│   │   ├── routes/
-│   │   │   ├── auth.py
-│   │   │   ├── rag_chat.py         # RAG streaming
-│   │   │   ├── projects.py
-│   │   │   ├── documents.py
-│   │   │   └── providers.py
-│   │   ├── services/
-│   │   │   ├── vector_store.py     # ChromaDB
-│   │   │   ├── embeddings.py       # Sentence transformers
-│   │   │   ├── document_processor.py
-│   │   │   ├── chunker.py          # Smart chunking
-│   │   │   ├── llm_service.py      # Multi-provider
-│   │   │   └── provider_factory.py
-│   │   └── schemas/
-│   │       ├── rag_chat.py
-│   │       └── ...
-│   └── requirements.txt
-├── frontend/
-│   ├── src/
-│   │   ├── App.jsx
-│   │   ├── main.jsx
-│   │   ├── components/
-│   │   │   ├── Chat.jsx
-│   │   │   ├── RAGChat.jsx         # RAG interface
-│   │   │   ├── Projects.jsx
-│   │   │   ├── Documents.jsx
-│   │   │   └── ...
-│   │   └── stores/
-│   │       ├── authStore.js
-│   │       └── ...
-│   └── package.json
-├── data/
-│   ├── documents/                  # Uploaded files
-│   ├── chromadb/                   # Vector database
-│   └── app.db                      # SQLite (dev)
-├── docker-compose.yml
-├── Dockerfile
-└── README.md
-```
-
-## 🤝 Contributing
-
-We welcome contributions! Please follow these guidelines:
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Run tests: `pytest` (backend), `npm test` (frontend)
-5. Commit: `git commit -m 'Add amazing feature'`
-6. Push: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-### Code Style
-
-- **Python**: Follow PEP 8, use Black formatter
-- **JavaScript**: Use ESLint + Prettier
-- **Commits**: Conventional Commits format
-
-### Areas for Contribution
-
-- 🆕 **New LLM Providers**: Add support for more providers
-- 🧪 **Testing**: Increase test coverage
-- 📚 **Documentation**: Improve guides and examples
-- 🐛 **Bug Fixes**: Check GitHub Issues
-- 🎨 **UI/UX**: Enhance frontend experience
-
----
-
 ## 📄 License
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) file for details.
-
----
-
-## 💬 Support
-
-- **GitHub Issues**: [https://github.com/yourusername/rag-multi-expert/issues](https://github.com/yourusername/rag-multi-expert/issues)
-
----
-
-## 🗓️ Roadmap
-
-### Q1 2025
-- [ ] Multi-modal RAG (images, audio)
-- [ ] Advanced reranking (Cohere, cross-encoder)
-- [ ] Hybrid search (keyword + semantic)
-- [ ] Graph RAG (Neo4j integration)
-
-### Q2 2025
-- [ ] Multi-tenant support
-- [ ] Fine-tuning interface
-- [ ] Custom embedding models
-- [ ] Advanced analytics dashboard
-
-### Q3 2025
-- [ ] Mobile app (React Native)
-- [ ] Voice interface
-- [ ] Collaborative features
-- [ ] Enterprise SSO
-
----
-
-## 🙏 Acknowledgments
-
-- **ChromaDB** - Vector database
-- **LangChain** - RAG framework inspiration
-- **Hugging Face** - Embedding models
-- **FastAPI** - Modern Python web framework
-- **React** - UI framework
-
----
 
 **Built with ❤️ for Community**
 
