@@ -17,7 +17,7 @@ class Settings(BaseSettings):
     REFRESH_TOKEN_EXPIRE_DAYS: int = 7
     
     # Application
-    APP_NAME: str = "LLM.io"
+    APP_NAME: str = "RAG.io"
     DEBUG: bool = False
     CORS_ORIGINS: str = "http://localhost:5173"
     

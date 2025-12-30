@@ -5,7 +5,7 @@ import logging
 
 from app.config import get_settings
 from app.database import init_db
-from app.routes import auth, chat, conversations, providers, templates, projects, documents, rag_chat, integrations, agents
+from app.routes import auth, chat, conversations, providers, templates, projects, documents, rag_chat, integrations
 
 # Configure logging
 logging.basicConfig(
@@ -88,7 +88,7 @@ app.include_router(projects.router)
 app.include_router(documents.router)
 app.include_router(rag_chat.router)
 app.include_router(integrations.router)
-app.include_router(agents.router)
+#app.include_router(agents.router)
 
 
 # Global exception handler

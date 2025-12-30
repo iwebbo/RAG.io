@@ -106,19 +106,18 @@ MODEL_CONTEXT_LIMITS = {
     "mistral:latest": 32768,
     "mistral-small": 32768,
     "mistral-large": 128000,
-    
+    "codestral:22b": 32000,
+    "mixtral:latest": 32000,
+    "mixtral:8x7b": 32000,
+    "mistrallite:latest": 32000,
+
+
     # Ollama - Qwen 2.5 (Alibaba)
     "qwen2.5:7b": 32768,
     "qwen2.5:14b": 32768,
     "qwen2.5:32b": 32768,
     "qwen2.5:72b": 131072,
-    
-    "phi-4-mini": 128000,
-    "phi-4": 128000,
-    "phi3.5:3.8b": 131072,  
-    "phi3:3.8b": 4096,    
-    "phi3:14b": 4096,
-    "phi3:latest": 128000,
+    "qwen3-coder:30b": 256000,
 
     # Ollama - Gemma 2 (Google)
     "gemma2:2b": 8192,
@@ -126,16 +125,23 @@ MODEL_CONTEXT_LIMITS = {
     "gemma2:27b": 8192,
     
     # Ollama - Phi-3.5 (Microsoft)
-    "phi3.5:3.8b": 131072,
-    
+    "phi3:14b": 128000,
+    "phi3:latest": 128000,
+    "phi4:14b": 16000,
+    "phi4:latest": 16000,
+
     # Ollama - DeepSeek
     "deepseek-coder:6.7b": 16384,
     "deepseek-coder:33b": 16384,
+    "deepseek-r1:32b": 128000,
     
     # Ollama - Code Llama
     "codellama:7b": 16384,
     "codellama:13b": 16384,
-    "codellama:34b": 16384,
+    "codellama:34b": 128000,
+
+    # Ollama - Gpt-oss
+    "gpt-oss:20b": 128000,
     
     # Fallback
     "default": 8192
