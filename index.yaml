@@ -1,0 +1,26 @@
+apiVersion: v1
+entries:
+  rag-multi-expert:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2026-01-06T22:21:54.607663282Z"
+    description: RAG.io - Retrieval-Augmented Generation
+    digest: e5ca62d56e4fe293154752c6d642988688eef538ccd34ab148e743f794c40d8f
+    home: https://github.com/iwebbo/RAG.io
+    keywords:
+    - rag
+    - llm
+    - ai-assistant
+    - langchain
+    - chromadb
+    maintainers:
+    - email: aecodinglocal@gmail.com
+      name: DevOps Team
+    name: rag-multi-expert
+    sources:
+    - https://github.com/iwebbo/RAG.io
+    type: application
+    urls:
+    - https://iwebbo.github.io/RAG.io/rag-multi-expert-1.0.0.tgz
+    version: 1.0.0
+generated: "2026-01-06T22:21:54.606786112Z"
