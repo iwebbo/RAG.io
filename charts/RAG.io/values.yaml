@@ -10,7 +10,7 @@ backend:
   enabled: true
   name: backend
   image:
-    repository: ghcr.io/iwebbo/rag-multi-expert/backend
+    repository: ghcr.io/iwebbo/rag.io/backend
     tag: "latest"
     pullPolicy: IfNotPresent
   replicas: 2
@@ -36,7 +36,7 @@ frontend:
   enabled: true
   name: frontend
   image:
-    repository: ghcr.io/iwebbo/rag-multi-expert/frontend
+    repository: ghcr.io/iwebbo/rag.io/frontend
     tag: "latest"
     pullPolicy: IfNotPresent
   replicas: 2
