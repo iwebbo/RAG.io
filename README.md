@@ -227,6 +227,14 @@ const reader = response.body.getReader();
 - Node.js 18+
 - PostgreSQL 15+
 ```
+### Quick start with Kubernetes *(Production-ready)*
+
+> **Helm Chart + Documentation**
+
+[📚 **Documentation Kubernetes officiel** →](https://iwebbo.github.io/RAG.io/)
+
+https://iwebbo.github.io/RAG.io/
+
 
 ### Quick Start (Docker)
 
