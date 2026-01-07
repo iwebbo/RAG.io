@@ -97,7 +97,7 @@ chroma:
     enabled: true
     className: "standard"
     size: 20Gi
-    mountPath: /chroma/chroma
+    mountPath: /data/chroma
   resources:
     requests:
       memory: "1Gi"
