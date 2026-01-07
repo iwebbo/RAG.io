@@ -60,10 +60,10 @@ spec:
       - name: nginx-config
         configMap:
           name: {{ include "rag.name" . }}-nginx-config
-      - name: nginx-cache                             # ← AJOUTÉ
+      - name: nginx-cache
         emptyDir: {}
-      - name: nginx-run                               # ← AJOUTÉ
+      - name: nginx-run
         emptyDir: {}
-      - name: tmp                                     # ← AJOUTÉ
+      - name: tmp
         emptyDir: {}
 {{- end }}

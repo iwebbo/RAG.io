@@ -23,6 +23,12 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
       - name: backend
+        securityContext:
+          {{- if .Values.backend.securityContext }}
+          {{- toYaml .Values.backend.securityContext | nindent 12 }}  # ← Utilise backend.securityContext
+          {{- else }}
+          {{- toYaml .Values.securityContext | nindent 12 }}          # ← Sinon global
+          {{- end }}
         image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
         imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
         ports:
