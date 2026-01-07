@@ -3,9 +3,9 @@ entries:
   rag-multi-expert:
   - apiVersion: v2
     appVersion: 1.0.0
-    created: "2026-01-07T14:36:14.99219443Z"
+    created: "2026-01-07T14:49:07.654046935Z"
     description: RAG.io - Retrieval-Augmented Generation
-    digest: b0b960041d6f0873659d0dc8e615f8a820943bab8635841ee5cb8af154d53ec6
+    digest: 55e930a32ae83ef0e47860b78be7895bfd38a80e1dd96348aa2d38891ef73df1
     home: https://github.com/iwebbo/RAG.io
     keywords:
     - rag
@@ -23,4 +23,4 @@ entries:
     urls:
     - https://iwebbo.github.io/RAG.io/rag-multi-expert-1.0.0.tgz
     version: 1.0.0
-generated: "2026-01-07T14:36:14.991246357Z"
+generated: "2026-01-07T14:49:07.653137791Z"
