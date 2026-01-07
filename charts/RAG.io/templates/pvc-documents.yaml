@@ -7,7 +7,7 @@ metadata:
     {{- include "rag.labels" . | nindent 4 }}
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   storageClassName: {{ .Values.documents.storage.className }}
   resources:
     requests:
