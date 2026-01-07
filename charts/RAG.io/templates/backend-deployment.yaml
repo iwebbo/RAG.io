@@ -24,11 +24,7 @@ spec:
       containers:
       - name: backend
         securityContext:
-          {{- if .Values.backend.securityContext }}
-          {{- toYaml .Values.backend.securityContext | nindent 12 }}  # ← Utilise backend.securityContext
-          {{- else }}
-          {{- toYaml .Values.securityContext | nindent 12 }}          # ← Sinon global
-          {{- end }}
+          {{- toYaml .Values.securityContext | nindent 12 }}
         image: "{{ .Values.backend.image.repository }}:{{ .Values.backend.image.tag }}"
         imagePullPolicy: {{ .Values.backend.image.pullPolicy }}
         ports:
@@ -42,6 +38,8 @@ spec:
           {{- toYaml . | nindent 10 }}
         {{- end }}
         volumeMounts:
+        - name: app-data
+          mountPath: /app/data
         - name: documents
           mountPath: {{ .Values.documents.storage.mountPath }}
         resources:
@@ -59,6 +57,8 @@ spec:
           initialDelaySeconds: 15
           periodSeconds: 5
       volumes:
+      - name: app-data
+        emptyDir: {}
       - name: documents
         persistentVolumeClaim:
           claimName: {{ include "rag.name" . }}-documents-pvc
