@@ -38,17 +38,17 @@ spec:
         resources:
           {{- toYaml .Values.chroma.resources | nindent 10 }}
         livenessProbe:
-          httpGet:
-            path: /api/v1/heartbeat
+          tcpSocket:                           # ← CHANGÉ: TCP au lieu de httpGet
             port: {{ .Values.chroma.service.targetPort }}
           initialDelaySeconds: 30
           periodSeconds: 10
+          failureThreshold: 3
         readinessProbe:
-          httpGet:
-            path: /api/v1/heartbeat
+          tcpSocket:                           # ← CHANGÉ: TCP au lieu de httpGet
             port: {{ .Values.chroma.service.targetPort }}
-          initialDelaySeconds: 15
+          initialDelaySeconds: 10
           periodSeconds: 5
+          failureThreshold: 3
       volumes:
       - name: chroma-data
         persistentVolumeClaim:
