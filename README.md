@@ -254,12 +254,14 @@ python3 -c "from cryptography.fernet import Fernet; print(Fernet.generate_key().
 # 4. Edit backend/.env with your secrets
 
 # 4.1 Edit backend/.env if (need to be run from VM/PROD Server)
+# Change by your hostname.fqdn or IP
 CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost,http://localhost:80
 # Change by your hostname.fqdn or IP
 
 # 4.1 Edit frontend/.env if (need to be run from VM/PROD Server)
-VITE_API_URL=http://localhost:8000 
 # Change by your hostname.fqdn or IP
+VITE_API_URL=http://localhost:8000 
+
 
 # 5. Start application
 docker-compose up -d
@@ -322,32 +324,6 @@ npm run dev
 ---
 
 ## ⚙️ Configuration
-
-### Environment Variables
-
-```bash
-# Backend (.env)
-# Database
-DATABASE_URL=postgresql://user:pass@localhost:5432/ragdb
-# or
-DATABASE_URL=sqlite:///./data/app.db
-
-# Security
-SECRET_KEY=your-super-secret-key-change-in-production
-ALGORITHM=HS256
-ACCESS_TOKEN_EXPIRE_MINUTES=10080
-
-# CORS
-CORS_ORIGINS=http://localhost:3000,http://localhost:5173
-
-# ChromaDB
-CHROMA_PERSIST_DIRECTORY=./data/chromadb
-
-# LLM Providers (optional, configure via UI)
-OPENAI_API_KEY=sk-...
-ANTHROPIC_API_KEY=sk-ant-...
-GOOGLE_API_KEY=...
-```
 
 ### Provider Configuration (UI)
 
