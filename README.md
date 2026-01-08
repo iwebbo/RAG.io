@@ -262,6 +262,10 @@ CORS_ORIGINS=http://localhost:5173,http://localhost:3000,http://localhost,http:/
 # Change by your hostname.fqdn or IP
 VITE_API_URL=http://localhost:8000 
 
+# Will be solve in 1.1.0
+cd backend/
+mkdir -p /app/data/chromadb
+chmod -R 777 /app/data
 
 # 5. Start application
 docker-compose up -d
