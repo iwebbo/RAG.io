@@ -307,7 +307,7 @@ curl -X POST http://localhost:8000/api/projects/ \
 
 Or via UI: **Projects → New Project**
 
-### 2. Upload Documents
+### Upload Documents
 
 ```bash
 # Via API
@@ -323,49 +323,8 @@ Or via UI: **Project → Documents → Upload**
 - `completed`: Ready for RAG queries
 - `failed`: Check `error_message` field
 
-### 3. Start a RAG Conversation
 
-```javascript
-// Frontend example (React)
-const startChat = async (message, projectId) => {
-  const response = await fetch('/api/rag/chat/stream', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${token}`,
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      message,
-      project_id: projectId,
-      provider_name: 'ollama',
-      model: 'llama3.1:8b',
-      temperature: 0.7,
-      top_k: 5
-    })
-  });
-
-  const reader = response.body.getReader();
-  const decoder = new TextDecoder();
-
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
-
-    const chunk = decoder.decode(value);
-    const lines = chunk.split('\n');
-
-    for (const line of lines) {
-      if (line.startsWith('event: message')) {
-        const dataLine = lines[lines.indexOf(line) + 1];
-        const data = JSON.parse(dataLine.substring(6));
-        console.log('Token:', data.content);
-      }
-    }
-  }
-};
-```
-
-### 5. Monitor Performance
+### Monitor Performance
 
 Check **Projects → Statistics** for:
 - Document processing status
@@ -375,7 +334,7 @@ Check **Projects → Statistics** for:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the **MIT License**. See [LICENSE](LICENSE) file for details.
 
